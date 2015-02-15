@@ -1,0 +1,40 @@
+body {
+	font-family:Garamond, sans-serif;
+	font-size: small;
+}
+
+#button-wrap {
+	width:400px;
+	margin:auto;
+	padding: 100px 0px 30px 0px;
+}
+
+input[type="text"] {
+	width:30px;
+}
+
+#button-wrap p {
+	float:left;
+}
+
+button {
+	float:right;
+}
+
+#sketch-wrap {
+	position:relative;
+	margin:auto;
+	width:400px;
+	height:400px;
+	border:1px solid black;
+	clear: both;
+}
+
+.row {
+	clear:left;
+}
+.cell {
+	height:25px;
+	width:25px;
+	float:left;
+}

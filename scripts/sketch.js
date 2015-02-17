@@ -1,14 +1,37 @@
 $(document).ready(function() {
-	//make 16 rows of divs
-	for (i=0; i<16; i++) { $('#sketch-wrap').append('<div class="row"></div>') }
-	
-	//populate each row with 16 cells
-	$('#sketch-wrap>div').each(function() {
-		for (i=0;i<16;i++) { $(this).append('<div class="cell"></div>') }
-	});
+	var drawGrid = function () {
+		//clears any previous divs
+		$('#sketch-wrap').empty();
 
-	//creates color trail from mouse
-	$('#sketch-wrap>div>div').mouseenter(function() {
-		$(this).css('background-color', 'blue');
-})
+		//sets vars for grid size 
+		var gridSize = $('#gridSize').val();
+		var cellSize = 400 / gridSize;
+
+		//make 16 rows of divs
+		for (i=0; i<gridSize; i++) { 
+			$('#sketch-wrap').append('<div class="row"></div>');
+		}
+		
+		//populate each row with 16 cells
+		$('#sketch-wrap>div').each(function() {
+			for (i=0;i<gridSize;i++) { 
+				$(this).append('<div class="cell"></div>')
+			}
+		})
+
+		//set height and width of grid cells and rows
+		$('.row').each(function() {
+			$(this).height(cellSize) });
+		$('.cell').each(function() {
+			$(this).height(cellSize);
+			$(this).width(cellSize);
+		})
+
+		//creates color trail from mouse
+		$('#sketch-wrap>div>div').mouseenter(function() {
+			$(this).css('background-color', 'blue') });	
+		}
+	
+	drawGrid();
+	$('#newGrid').click(drawGrid);
 })

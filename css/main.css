@@ -35,5 +35,5 @@ button {
 }
 .cell {
 	float:left;
-	opacity: 1;
+	background-color:blue;
 }

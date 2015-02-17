@@ -19,18 +19,20 @@ $(document).ready(function() {
 			}
 		})
 
-		//set height and width of grid cells and rows
+		//set height, width and opacity of grid cells and rows
 		$('.row').each(function() {
 			$(this).height(cellSize) });
 		$('.cell').each(function() {
 			$(this).height(cellSize);
 			$(this).width(cellSize);
+			$(this).css('opacity', '0');
 		})
 
 		//creates color trail from mouse
 		$('#sketch-wrap>div>div').mouseenter(function() {
-			$(this).css('background-color', 'blue') });	
-		}
+			$(this).css('opacity', '+=.1');
+		})
+	}
 	
 	drawGrid();
 	$('#newGrid').click(drawGrid);
